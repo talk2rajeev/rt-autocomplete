@@ -1,6 +1,6 @@
 {
   "name": "rt-autocomplete",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "React Auto-complete, react dropdown",
   "main": "lib/index.js",
   "types": "lib",
@@ -8,8 +8,19 @@
     "build": "tsc -p .",
     "storybook": "start-storybook"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react autocomplete", 
+    "react autosuggest", 
+    "react typeahead", 
+    "react dropdown", 
+    "autocomplete", 
+    "dropdown",
+    "typeahead",
+    "react select",
+    "npm"
+  ],
+  "author": "Rajeev Sharma",
+  "repository": "https://github.com/talk2rajeev/rt-autocomplete.git",
   "license": "MIT",
   "devDependencies": {
     "@storybook/react": "^6.3.8",
