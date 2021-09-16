@@ -1,3 +1,5 @@
-import React from 'react'
+import { Hello } from "./Hello";
 
-export const Hello: React.FC<{text: string}> = ({ text}) => <h1>{text}</h1>
+export {
+    Hello
+}

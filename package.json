@@ -5,14 +5,18 @@
   "main": "lib/index.js",
   "types": "lib",
   "scripts": {
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "storybook": "start-storybook"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@storybook/react": "^6.3.8",
     "@types/react": ">=17.0.0",
-    "react": ">=17.0.0"
+    "@types/storybook__react": "^5.2.1",
+    "react": ">=17.0.0",
+    "react-dom": "^17.0.2"
   },
   "peerDependencies": {
     "@types/react": "^17.0.21",
