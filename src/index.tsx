@@ -1,5 +1,7 @@
 import { Hello } from "./Hello";
+import { AutoComplete } from "./autocomplete";
 
 export {
-    Hello
+    Hello,
+    AutoComplete,
 }

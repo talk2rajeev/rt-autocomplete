@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { Hello } from "./index";
+import { Hello } from ".";
 
 storiesOf("Hello world", module)
     .add("Hello world",
