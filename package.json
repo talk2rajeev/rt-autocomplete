@@ -5,8 +5,9 @@
   "main": "lib/index.js",
   "types": "lib",
   "scripts": {
-    "build": "tsc -p .",
-    "storybook": "start-storybook"
+    "build": "tsc -p . && npm run copy-autocomplete-css",
+    "storybook": "start-storybook",
+    "copy-autocomplete-css": "cp ./src/autocomplete/autocomplete.css ./lib/autocomplete/"
   },
   "keywords": [
     "react autocomplete", 
