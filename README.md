@@ -25,7 +25,7 @@ function App() {
     return (
         <div className="your-classname">
             <h1>Auto complete</h1>
-            <DropdownAutocomplete 
+            <AutoComplete 
                 onkeypress = {onkeypress}
                 listItems = { list }
                 maxItem={15}
@@ -69,7 +69,7 @@ function App() {
   return (
     <div className="your-classname">
         <h1>Auto complete</h1>
-        <DropdownAutocomplete 
+        <AutoComplete 
           onkeypress = {bebouncedonKeyPress}
           listItems = { list }
           maxItem={15}
