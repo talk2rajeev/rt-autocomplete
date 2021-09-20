@@ -20,7 +20,7 @@ storiesOf("AutoComplete", module)
             return <AutoComplete  
                 listItems={list}
                 onkeypress={onkeypress}
-                showDropdownIcon = {false}
+                showDropdownIcon = {true}
             />
         }
     )

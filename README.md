@@ -8,7 +8,7 @@ react autocomplete component, react dropdown component
 ### Simple use
 ```
 import React, { useState } from 'react';
-import { AutoComplete }  from './dropdown-autocomplete'
+import { AutoComplete }  from 'rt-autocomplete';
 
 function App() {
     const [list, setList] = useState([])
@@ -40,7 +40,7 @@ function App() {
 ### With Debounce 
 ```
 import React, { useState } from 'react';
-import { AutoComplete }  from './dropdown-autocomplete'
+import { AutoComplete }  from 'rt-autocomplete';
 
 function App() {
     const [list, setList] = useState([])
