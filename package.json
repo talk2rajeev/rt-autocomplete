@@ -1,6 +1,6 @@
 {
   "name": "rt-autocomplete",
-  "version": "0.0.81",
+  "version": "0.0.82",
   "description": "React Auto-complete, react dropdown",
   "main": "lib/index.js",
   "types": "lib",
