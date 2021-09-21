@@ -85,12 +85,13 @@ export default App;
 ### props
 
 ```javascript
+type OptionValue = string | number;
+
 interface Props<T extends OptionValue> {
     onkeypress: (query: string, delay?: number) => void;
     onblur?: (query: string) => void;
     onfocus?: () => void;
     listItems: Option<T>[];
-    listItemElement?: React.ReactElement,
     defaultValue?: string,
     maxItem?: number,
     showDropdownIcon?: boolean
