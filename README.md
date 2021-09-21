@@ -6,7 +6,7 @@ react autocomplete component, react dropdown component
 ## React Autocomplete
 
 ### Simple use
-```
+```javascript
 import React, { useState } from 'react';
 import { AutoComplete }  from 'rt-autocomplete';
 
@@ -38,7 +38,7 @@ function App() {
 
 
 ### With Debounce 
-```
+```javascript
 import React, { useState } from 'react';
 import { AutoComplete }  from 'rt-autocomplete';
 
@@ -80,4 +80,33 @@ function App() {
 }
 
 export default App;
+```
+
+### props
+
+```javascript
+interface Props<T extends OptionValue> {
+    onkeypress: (query: string, delay?: number) => void;
+    onblur?: (query: string) => void;
+    onfocus?: () => void;
+    listItems: Option<T>[];
+    listItemElement?: React.ReactElement,
+    defaultValue?: string,
+    maxItem?: number,
+    showDropdownIcon?: boolean
+}
+```
+
+### porps, props type and description
+
+```
+| props            | type          | description                             |
+| ---------------- |:-------------:| ---------------------------------------:|
+| onkeypress       | function      | query: string, delay: number (optional) |
+| onblur           | function      | query: string                           |
+| onfocus          | function      |                                         |
+| listItems        | Array[]       | { value: string | number, id: string }  |
+| defaultValue     | string        | default value to pre-populate           |
+| maxItem          | number        | show maxItems if no of items are large  |
+| showDropdownIcon | function      | show/hide showDropdownIcon              |
 ```

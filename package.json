@@ -10,11 +10,11 @@
     "copy-autocomplete-css": "cp ./src/autocomplete/autocomplete.css ./lib/autocomplete/"
   },
   "keywords": [
-    "react autocomplete", 
-    "react autosuggest", 
-    "react typeahead", 
-    "react dropdown", 
-    "autocomplete", 
+    "react autocomplete",
+    "react autosuggest",
+    "react typeahead",
+    "react dropdown",
+    "autocomplete",
     "dropdown",
     "typeahead",
     "react select",

@@ -6,7 +6,7 @@ type OptionValue = string | number;
 
 type Option<T extends OptionValue> = {
   value: T;
-  label: string;
+  id: string;
 };
 
 interface Props<T extends OptionValue> {
@@ -39,6 +39,11 @@ export const AutoComplete = <T extends OptionValue>({
     
     const onInputFocus = () => {
         setIsActive(true)
+        onfocus && onfocus()
+    }
+
+    const onInputBlur = () => {
+        onblur && onblur(inputValue)
     }
 
     const onchange = (value: string) => {
@@ -81,6 +86,7 @@ export const AutoComplete = <T extends OptionValue>({
                     className="autocompleteinput"
                     onChange = {(e) => onchange(e.target.value)}
                     onFocus={onInputFocus}
+                    onBlur={onInputBlur}
                     value={inputValue}
                 />
                 {
@@ -94,7 +100,7 @@ export const AutoComplete = <T extends OptionValue>({
             </div>
             { isActive && listItemsToDisplay.length > 0 && <div className="listContainer" onClick={(e)=>onItemSelect(e)}>
                 {
-                    listItemsToDisplay.map(item => <div className="listitem" key={item.label} data-val={item.value} data-id={item.label}>{item.value}</div>)
+                    listItemsToDisplay.map(item => <div className="listitem" key={item.id} data-val={item.value} data-id={item.id}>{item.value}</div>)
                 }
                 {
                     remainigItems && remainigItems > 0 && listItemsToDisplay.length > 0 && <div>{remainigItems} more...</div>
