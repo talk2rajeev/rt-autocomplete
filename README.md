@@ -95,19 +95,24 @@ interface Props<T extends OptionValue> {
     defaultValue?: string,
     maxItem?: number,
     showDropdownIcon?: boolean
+    CustomDropdownIcon?: React.ReactElement;
 }
 ```
 
 ### porps, props type and description
 
 ```
-| props            | type          | description                             |
-| ---------------- |:-------------:| ---------------------------------------:|
-| onkeypress       | function      | query: string, delay: number (optional) |
-| onblur           | function      | query: string                           |
-| onfocus          | function      |                                         |
-| listItems        | Array[]       | { value: string | number, id: string }  |
-| defaultValue     | string        | default value to pre-populate           |
-| maxItem          | number        | show maxItems if no of items are large  |
-| showDropdownIcon | function      | show/hide showDropdownIcon              |
+
+| props              | type          | description                             |
+| ------------------ |:-------------:| ---------------------------------------:|
+| onkeypress         | function      | query: string, delay: number (optional) |
+| onblur             | function      | optional, (query: string)               |
+| onfocus            | function      | optional,                               |
+| listItems          | Array[]       | { value: string | number, id: string }  |
+| defaultValue       | string        | optional, default value to pre-populate |
+| maxItem            | number        | optional, show **more items link** if no| 
+|                    |               | of items are large                      |
+| showDropdownIcon   | boolean       | optional, show/hide icon                |
+| CustomDropdownIcon | ReactElement  | optional,                               |
+
 ```

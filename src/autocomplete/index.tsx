@@ -13,22 +13,26 @@ interface Props<T extends OptionValue> {
     onkeypress: (query: string, delay?: number) => void;
     onblur?: (query: string) => void;
     onfocus?: () => void;
+    onclickmore?: (query: string) => void;
     listItems: Option<T>[];
     listItemElement?: React.ReactElement,
     defaultValue?: string,
     maxItem?: number,
-    showDropdownIcon?: boolean
+    showDropdownIcon?: boolean,
+    CustomDropdownIcon?: React.ReactElement,
 }
 
 export const AutoComplete = <T extends OptionValue>({
     onkeypress,
     onblur,
     onfocus,
+    onclickmore,
     listItems,
     listItemElement,
     defaultValue="",
     maxItem,
     showDropdownIcon=false,
+    CustomDropdownIcon
 }: Props<T>) => {
     const [isActive, setIsActive] = useState(false)
     const [inputValue, setInputValue] = useState(defaultValue)
@@ -40,6 +44,11 @@ export const AutoComplete = <T extends OptionValue>({
     const onInputFocus = () => {
         setIsActive(true)
         onfocus && onfocus()
+    }
+
+    const onDropdownIconClick = () => {
+        onInputFocus();
+        inputRef.current?.focus();
     }
 
     const onInputBlur = () => {
@@ -54,10 +63,12 @@ export const AutoComplete = <T extends OptionValue>({
     const onItemSelect = (element: any): void => {
         const dataid = element.target.attributes['data-id']
         const dataval = element.target.attributes['data-val']
-        console.log(dataid.value)
+        if (dataval) {
+            setInputValue(dataval.value)
+        } else {
+            // props.onMoreClick()
+        }
         setIsActive(false)
-        setInputValue(dataval.value)
-        // inputRef.current!.placeholder = input.value;
     }
 
     const clickAnywhere = (e: any) => {
@@ -90,12 +101,7 @@ export const AutoComplete = <T extends OptionValue>({
                     value={inputValue}
                 />
                 {
-                    showDropdownIcon && <svg style={{position: 'absolute', top: 10, right: 10, transform: 'rotate(180deg)'}} width="24.000000000000004" height="24.000000000000004" xmlns="http://www.w3.org/2000/svg">
-                        <g id="Layer_1">
-                            <title>Layer 1</title>
-                            <path stroke="#999" id="svg_1" d="m6.58168,17.67989l6.17256,-11.14143l6.17256,11.14143l-12.34513,0l0.00001,0z" fill="#999"/>
-                        </g>
-                   </svg>
+                    showDropdownIcon && !CustomDropdownIcon ? <DefaultDropdownIcon onDropdownIconClick={onDropdownIconClick} />  : <span className="dropdown-icon" onClick={onDropdownIconClick}>{ CustomDropdownIcon }</span>
                 }
             </div>
             { isActive && listItemsToDisplay.length > 0 && <div className="listContainer" onClick={(e)=>onItemSelect(e)}>
@@ -103,10 +109,21 @@ export const AutoComplete = <T extends OptionValue>({
                     listItemsToDisplay.map(item => <div className="listitem" key={item.id} data-val={item.value} data-id={item.id}>{item.value}</div>)
                 }
                 {
-                    remainigItems && remainigItems > 0 && listItemsToDisplay.length > 0 && <div>{remainigItems} more...</div>
+                    remainigItems > 0 && listItemsToDisplay.length > 0 && <div className="listitem more-item-text">{remainigItems} more items.</div>
                 }
             </div> }
         </div>
     )
 }
+
+interface DropdownProps {
+    onDropdownIconClick: ()=> void;
+} 
+const DefaultDropdownIcon = ({onDropdownIconClick}:DropdownProps) => <svg className="dropdown-icon" onClick={onDropdownIconClick} width="24.000000000000004" height="24.000000000000004" xmlns="http://www.w3.org/2000/svg">
+    <g id="Layer_1">
+        <title>Layer 1</title>
+        <path stroke="#999" id="svg_1" d="m6.58168,17.67989l6.17256,-11.14143l6.17256,11.14143l-12.34513,0l0.00001,0z" fill="#999"/>
+    </g>
+</svg>
+
 

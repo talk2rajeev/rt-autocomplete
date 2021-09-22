@@ -18,6 +18,14 @@
     padding: 7.5px 12.5px;
 }
 
+.ddCoContainer > .inputContainer > .dropdown-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
 .ddCoContainer > .listContainer {
     background-color: #fff;
     box-shadow: 0px 4px 5px 2px #cccc;
@@ -34,4 +42,7 @@
 .ddCoContainer > .listContainer .listitem:hover{
     background-color: #efefef;
     cursor: pointer;
+}
+.ddCoContainer > .listContainer .more-item-text {
+    color: #555;
 }
