@@ -47,11 +47,15 @@ storiesOf("AutoComplete", module)
                 const filteredList = list.filter((item: any) => item.value.toLowerCase().includes(query.toLowerCase())).map((item: any) => ({label: item.label, value: item.value}))
                 console.log(filteredList)
             }
+            const onclickmore = (query: string) => {
+                console.log(query)
+            }
             return <AutoComplete  
                 listItems={list}
                 onkeypress={onkeypress}
                 showDropdownIcon = {true}
                 maxItem={10}
+                onclickmore={onclickmore}
             />
         }
     );

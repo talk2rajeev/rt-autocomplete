@@ -7,7 +7,7 @@ type OptionValue = string | number;
 type Option<T extends OptionValue> = {
   value: T;
   id: string;
-};
+}; 
 
 interface Props<T extends OptionValue> {
     onkeypress: (query: string, delay?: number) => void;
@@ -77,6 +77,11 @@ export const AutoComplete = <T extends OptionValue>({
         }
     }
 
+    const onClickMoreLink = () => {
+        onclickmore ? onclickmore(inputValue) : console.warn('Please provide "onclickmore" function as props to <AutoComplete /> component');
+        setInputValue('');
+    }
+
     useEffect(()=>{
         document.addEventListener('click', clickAnywhere)
 
@@ -87,7 +92,7 @@ export const AutoComplete = <T extends OptionValue>({
     }, [])
 
     const listItemsToDisplay = listItems.slice(0, maxItem ? maxItem : listItems.length-1)
-    const remainigItems: number = maxItem ? listItems.length - maxItem : 0
+    const remainingItems: number = maxItem ? listItems.length - maxItem : 0
 
     return (
         <div ref={wrapperRef} className="ddCoContainer">
@@ -109,7 +114,7 @@ export const AutoComplete = <T extends OptionValue>({
                     listItemsToDisplay.map(item => <div className="listitem" key={item.id} data-val={item.value} data-id={item.id}>{item.value}</div>)
                 }
                 {
-                    remainigItems > 0 && listItemsToDisplay.length > 0 && <div className="listitem more-item-text">{remainigItems} more items.</div>
+                    remainingItems > 0 && listItemsToDisplay.length > 0 && <div className="more-item-text"><span className="more-link" onClick={onClickMoreLink}>{remainingItems} more items.</span></div>
                 }
             </div> }
         </div>

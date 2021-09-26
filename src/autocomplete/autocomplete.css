@@ -45,4 +45,10 @@
 }
 .ddCoContainer > .listContainer .more-item-text {
     color: #555;
+    padding: 10px;
 }
+.more-item-text > .more-link {
+    color: #0066ff;
+    cursor: pointer;
+}
+
