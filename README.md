@@ -6,6 +6,8 @@ react autocomplete component, react dropdown component
 ## React Autocomplete
 ![autoComplete1](https://user-images.githubusercontent.com/13742861/135275135-1516d8c6-3e23-4760-9c5a-64c15562dba1.gif)
 
+![autoComplete2](https://user-images.githubusercontent.com/13742861/135278539-9af381e8-b83f-40ec-8d26-f10c855f1b3f.gif)
+
 ### Simple use
 ```javascript
 import React, { useState } from 'react';
