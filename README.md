@@ -113,14 +113,14 @@ interface Props {
 
 | props                | type          | description                               |
 | -------------------- |:-------------:| -----------------------------------------:|
-| onkeypress           | function      | query: string, delay: number (optional)   |
-| onblur               | function      | [optional], (query: string)               |
-| onfocus              | function      | [optional],                               |
-| onclickmore          | function      | [optional], (query: string)               |
+| onkeypress           | function      | (query: string, delay?: number) => void;  |
+| onblur               | function      | [optional], (query: string) => void;      |
+| onfocus              | function      | [optional], () => void;                   |
+| onclickmore          | function      | [optional], (query: string) => void;      |
 | onSelect             | function      | (item: Option) => void;                   |
 | renderCustomListItem | function      | [optional], (porp: Option)=> ReactElement |
-| listItems            | Array[]       | { value: string | number, id: string }    |
-| defaultValue         | string        | [optional], default value to pre-populate |
+| listItems            | Array[Option] | Array of Option type                      |
+| defaultValue         | string        | [optional], default value for initial load|
 | maxItem              | number        | [optional], show "more items link" if no  | 
 |                      |               | of items are large                        |
 | showDropdownIcon     | boolean       | [optional], show/hide icon                |
