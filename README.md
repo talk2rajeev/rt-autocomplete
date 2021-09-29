@@ -64,13 +64,13 @@ function App() {
         }
     }
 
-  const bebouncedonKeyPress = debounce(onkeypress, 200)
+  const debouncedOnKeyPress = debounce(onkeypress, 200)
 
   return (
     <div className="your-classname">
         <h1>Auto complete</h1>
         <AutoComplete 
-          onkeypress = {bebouncedonKeyPress}
+          onkeypress = {debouncedOnKeyPress}
           listItems = { list }
           maxItem={15}
           showDropdownIcon = {true}
@@ -82,7 +82,7 @@ function App() {
 export default App;
 ```
 
-### props
+### props and types
 
 ```Typescript
 export type Option = {
@@ -107,7 +107,7 @@ interface Props {
 }
 ```
 
-### porps, props type and description
+### list of porps
 
 ```
 
