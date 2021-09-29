@@ -4,6 +4,7 @@ react autocomplete component, react dropdown component
 # How to use ?
 
 ## React Autocomplete
+![autoComplete1](https://user-images.githubusercontent.com/13742861/135275135-1516d8c6-3e23-4760-9c5a-64c15562dba1.gif)
 
 ### Simple use
 ```javascript
