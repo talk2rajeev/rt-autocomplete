@@ -55,9 +55,9 @@ export const AutoComplete = ({
     onblur && onblur(inputValue);
   };
 
-  const onchange = (value: string) => {
-    setInputValue(value);
-    onkeypress(value);
+  const onchange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+    onkeypress(e.target.value);
   };
 
   const onItemSelect = (item: Option): void => {
@@ -69,7 +69,6 @@ export const AutoComplete = ({
   };
 
   const clickAnywhere = (e: any) => {
-    console.log('clickAnywhere called')
     if (wrapperRef.current && !wrapperRef.current!.contains(e.target)) {
       setIsActive(false);
     }
@@ -105,7 +104,7 @@ export const AutoComplete = ({
         <input
           ref={inputRef}
           className="autocompleteinput"
-          onChange={(e) => onchange(e.target.value)}
+          onChange={onchange}
           onFocus={onInputFocus}
           onBlur={onInputBlur}
           value={inputValue}
@@ -125,7 +124,7 @@ export const AutoComplete = ({
               {renderCustomListItem ? (
                 renderCustomListItem({ ...item })
               ) : (
-                <ListItem item={item} />
+                <ListItem item={item} key={item.id}/>
               )}
             </div>
           ))}
