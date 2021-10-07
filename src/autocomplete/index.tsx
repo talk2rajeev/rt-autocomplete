@@ -145,23 +145,27 @@ interface DropdownProps {
   onDropdownIconClick: () => void;
 }
 const DefaultDropdownIcon = ({ onDropdownIconClick }: DropdownProps) => (
-  <svg
-    className="dropdown-icon"
-    onClick={onDropdownIconClick}
-    width="24"
-    height="24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <g id="Layer_1">
-      <title>Layer 1</title>
-      <path
-        stroke="#999"
-        id="svg_1"
-        d="m6.58168,17.67989l6.17256,-11.14143l6.17256,11.14143l-12.34513,0l0.00001,0z"
-        fill="#999"
-      />
-    </g>
+  // <svg
+  //   className="dropdown-icon"
+  //   onClick={onDropdownIconClick}
+  //   width="24"
+  //   height="24"
+  //   xmlns="http://www.w3.org/2000/svg"
+  // >
+  //   <g id="Layer_1">
+  //     <title>Layer 1</title>
+  //     <path
+  //       stroke="#999"
+  //       id="svg_1"
+  //       d="m6.58168,17.67989l6.17256,-11.14143l6.17256,11.14143l-12.34513,0l0.00001,0z"
+  //       fill="#999"
+  //     />
+  //   </g>
+  // </svg>
+  <svg width="14" height="14" className="dropdown-icon" onClick={onDropdownIconClick} viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.5 1.5C2.03205 2.37257 3.12053 3.78587 3.69238 4.63548C4.4536 5.76644 5.21603 6.8726 6.05073 7.9458C6.31895 8.29064 6.68764 8.75848 6.84991 9.16415C6.9114 9.31786 7.01696 9.49045 7.10847 9.63425C7.24992 9.85653 7.14166 9.73379 7.23383 9.61858C7.56337 9.20667 8.17604 7.91652 8.5 7.5C9.5 6.21429 9.60181 5.78776 10.266 4.52578C10.422 4.22931 10.6229 3.94183 10.7831 3.64434C10.9823 3.27435 11.139 2.88391 11.3433 2.51609C11.6171 2.02323 11.7668 1.47536 12.0837 1" stroke="#545252" strokeWidth="2" strokeLinecap="round"/>
   </svg>
+
 );
 
 const ListItem: React.FC<{ item: Option }> = ({ item }) => (
