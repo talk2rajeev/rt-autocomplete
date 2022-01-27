@@ -1,5 +1,5 @@
 # rt-autocomplete
-react autocomplete component, react dropdown component. It is based in React, TypeScript.
+react autocomplete component, react dropdown component. It is built using React and TypeScript.
 
 # How to use ?
 please follow the doc.
