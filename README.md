@@ -1,5 +1,6 @@
 # rt-autocomplete
-react autocomplete component, react dropdown component. It is built using React and TypeScript.
+react autocomplete component, react dropdown component. It is built using React and TypeScript. It has ability to provide custom listItem component as props which
+makes it highly flexible and usable.
 
 # How to use ?
 please follow the doc.
