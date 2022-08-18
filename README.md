@@ -138,7 +138,7 @@ interface Props {
 
 ```tsx
 import React, { useState } from 'react';
-import { AutoComplete, Option }  from './rt-autocomplete'; // Option is type of List Item
+import { AutoComplete, Option }  from 'rt-autocomplete'; // Option is type of List Item
 
 const CustomListItem = (props: Option) => {
     return (
