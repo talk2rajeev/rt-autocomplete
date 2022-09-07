@@ -42,7 +42,7 @@ function App() {
 ```
 
 
-### With Debounce 
+### With Debounce method
 ```javascript
 import React, { useState } from 'react';
 import { AutoComplete }  from 'rt-autocomplete';
