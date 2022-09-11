@@ -1,4 +1,4 @@
-# rt-autocomplete
+# rt-autocomplete (Auto complete component)
 It is a searchable autocomplete dropdown component based on React and TypeScript. It has ability to provide custom listItem component as props which
 makes it highly flexible and usable.
 
