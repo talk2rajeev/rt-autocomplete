@@ -7,7 +7,9 @@
   "scripts": {
     "build": "tsc -p . && npm run copy-autocomplete-css",
     "storybook": "start-storybook",
-    "copy-autocomplete-css": "cp ./src/autocomplete/autocomplete.css ./lib/autocomplete/"
+    "copy-autocomplete-css": "cp ./src/autocomplete/autocomplete.css ./lib/autocomplete/",
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "keywords": [
     "react autocomplete",
